@@ -5,18 +5,18 @@
   "projectId": "github:jonathanblunt1214-lgtm/The-Crucible",
   "repository": "jonathanblunt1214-lgtm/Learning-Worker",
   "ref": "refs/heads/main",
-  "workerSha": "443b4491a81220c695358a7f11f567883a327426",
-  "vettedStateSha": "65d864bb669044d8734122a591aef171b9c68d56",
-  "generatedAt": "2026-09-28T07:42:30.546Z",
-  "plaintextSha256": "64cbd31a0d8255ce8bd77dde82690537320daad0a00e1f62280ca89b8eb96068",
+  "workerSha": "148c2f798faab3aba55ddb01294c2b54799c89f4",
+  "vettedStateSha": "11785529178794734eb598f4cd2152af7e9bc16c",
+  "generatedAt": "2026-09-28T16:01:57.583Z",
+  "plaintextSha256": "d51e1cb511afbc841a79b4150755b6b2fc12ceaf7923d9f7992dc7b835db34c2",
   "plaintextBytes": 3573544,
-  "encryptedSha256": "a1d2c1d8dfeaa1d98a9fa8b5da3e77abb86199c9def5327aeb4ce166461b3ea8",
+  "encryptedSha256": "255ca29ebfab680d082ae6fed5235734fbddc9d2352ccd5f60d88e420831efab",
   "encryptedBytes": 3574101,
   "chunks": [
     {
       "name": "worker-state.part-0000.enc",
       "bytes": 3574101,
-      "sha256": "a1d2c1d8dfeaa1d98a9fa8b5da3e77abb86199c9def5327aeb4ce166461b3ea8"
+      "sha256": "255ca29ebfab680d082ae6fed5235734fbddc9d2352ccd5f60d88e420831efab"
     }
   ]
 }
