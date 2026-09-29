@@ -20,7 +20,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  regression:
+    name: Learning worker regression
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out worker controls
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Run worker regression tests
+        shell: bash
+        run: node --test test/*.test.js
+
   extract:
+    needs: regression:
     runs-on: windows-latest
     timeout-minutes: 20
     steps:
@@ -56,12 +70,6 @@ jobs:
           [IO.File]::WriteAllText((Join-Path $ssh 'known_hosts'), "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl`n")
           $env:GIT_SSH_COMMAND = "ssh -i `"$(Join-Path $ssh 'key')`" -o IdentitiesOnly=yes -o UserKnownHostsFile=`"$(Join-Path $ssh 'known_hosts')`" -o StrictHostKeyChecking=yes"
           git clone --depth 1 git@github.com:6076446993/Crucible-Vetted-Learning-State.git vetted-state
-
-      - name: Run worker regression tests
-        shell: powershell
-        run: |
-          $testFiles = Get-ChildItem -LiteralPath test -File -Filter '*.test.js' | Select-Object -ExpandProperty FullName
-          node --test $testFiles
 
       - name: Run deterministic encrypted hosted extraction
         shell: powershell
