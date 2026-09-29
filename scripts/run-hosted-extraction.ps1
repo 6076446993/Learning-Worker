@@ -16,7 +16,7 @@ $throughputFile = Join-Path $learningRoot 'adaptive-throughput.json'
 $oversightApprovalFile = Join-Path $learningRoot 'oversight-approvals.json'
 $vettedApprovalFile = Join-Path $workspace 'vetted-oversight-approvals.json'
 $runStartedAt = Get-Date
-if ($env:GITHUB_REPOSITORY -ne 'jonathanblunt1214-lgtm/Learning-Worker') { throw 'Unexpected repository identity.' }
+if ($env:GITHUB_REPOSITORY -ne '6076446993/Learning-Worker') { throw 'Unexpected repository identity.' }
 if (-not $env:LEARNING_WORKER_KEY) { throw 'Encrypted-state key is unavailable.' }
 if (-not $env:OVERSIGHT_WORKER_BUNDLE_KEY) { throw 'Independent-oversight export key is unavailable.' }
 $oversightPublicKey = Join-Path $workspace 'oversight-public.pem'
@@ -144,7 +144,7 @@ try {
     git worktree remove --force $exportWorktree | Out-Null
   }
 
-  Remove-Item -LiteralPath $encryptedState -Force
+  if (Test-Path -LiteralPath $encryptedState) { Remove-Item -LiteralPath $encryptedState -Force }
   node scripts/crypt-bundle.js encrypt $stateZip $encryptedState
   if ($LASTEXITCODE -ne 0) { throw 'Worker state encryption failed.' }
   gh release upload worker-state $encryptedState --repo $env:GITHUB_REPOSITORY --clobber
