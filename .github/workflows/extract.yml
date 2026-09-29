@@ -24,7 +24,7 @@ jobs:
       - name: Check out configured Crucible learning branch
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
-          repository: jonathanblunt1214-lgtm/The-Crucible
+          repository: 6076446993/The-Crucible
           ref: ${{ vars.CRUCIBLE_REF || 'development' }}
           path: crucible-engine
           persist-credentials: false
@@ -32,7 +32,7 @@ jobs:
       - name: Check out signed independent oversight results
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          repository: jonathanblunt1214-lgtm/Vetting-and-Governance-oversite.
+          repository: 6076446993/Vetting-and-Governance-oversite.
           ref: vetted-results
           path: oversight-results
           persist-credentials: false
@@ -49,7 +49,7 @@ jobs:
           [IO.File]::WriteAllText((Join-Path $ssh 'key'), $env:VETTED_STATE_READ_KEY)
           [IO.File]::WriteAllText((Join-Path $ssh 'known_hosts'), "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl`n")
           $env:GIT_SSH_COMMAND = "ssh -i `"$(Join-Path $ssh 'key')`" -o IdentitiesOnly=yes -o UserKnownHostsFile=`"$(Join-Path $ssh 'known_hosts')`" -o StrictHostKeyChecking=yes"
-          git clone --depth 1 git@github.com:jonathanblunt1214-lgtm/Crucible-Vetted-Learning-State.git vetted-state
+          git clone --depth 1 git@github.com:6076446993/Crucible-Vetted-Learning-State.git vetted-state
 
       - name: Run worker regression tests
         shell: powershell
