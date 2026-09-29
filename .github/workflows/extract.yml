@@ -34,7 +34,7 @@ jobs:
         run: node --test test/*.test.js
 
   extract:
-    needs: regression:
+    needs: regression
     runs-on: windows-latest
     timeout-minutes: 20
     steps:
