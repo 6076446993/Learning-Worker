@@ -17,7 +17,7 @@ function buildCandidateEnvelope({ candidate, evidenceOutcomeIds, sourceCommit, g
     claim:candidate.claim, claimBoundary:candidate.claimBoundary, generalizationBoundary:candidate.generalizationBoundary || null,
     failureCode:candidate.provenance?.failureCode || null, canonicalFailureId:candidate.provenance?.canonicalFailureId || null,
     evidenceOutcomeIds:[...new Set(evidenceOutcomeIds)].sort(), candidateSha256:sha(candidate),
-    source:{ repository:'jonathanblunt1214-lgtm/Learning-Worker', commit:sourceCommit },
+    source:{ repository:'6076446993/Learning-Worker', commit:sourceCommit },
     generatedAt, classification:'Insufficient Evidence', promotionAuthorized:false,
   };
   return Object.freeze({ ...body, envelopeSha256:sha(body) });
