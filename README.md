@@ -7,6 +7,7 @@ This repository contains no committed plaintext training documents, extracted so
 ## Fixed operating boundary
 
 - Project identity: `github:jonathanblunt1214-lgtm/The-Crucible`
+- Current repository namespace: `6076446993/Learning-Worker`; the project identity above is intentionally retained as the durable learning identity across the GitHub ownership transfer.
 - Hosted custody: private release assets encrypted before upload; plaintext exists only in the ephemeral job workspace and is discarded with the runner
 - Maximum sources per run: 25
 - Maximum active documents per run: 9
