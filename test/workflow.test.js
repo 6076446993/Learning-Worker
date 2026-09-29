@@ -39,6 +39,14 @@ test('workflow runs worker regression tests before hosted extraction', () => {
   assert.ok(workflow.indexOf('Run worker regression tests') < workflow.indexOf('Run deterministic encrypted hosted extraction'));
 });
 
+test('hosted extraction tolerates a missing prior encrypted state asset', () => {
+  const script = fs.readFileSync(path.join(root, 'scripts', 'run-hosted-extraction.ps1'), 'utf8');
+  assert.match(
+    script,
+    /if \(Test-Path -LiteralPath \$encryptedState\) \{ Remove-Item -LiteralPath \$encryptedState -Force \}/,
+  );
+});
+
 test('hosted extraction publishes a separate candidate-only export for oversight', () => {
   const script = fs.readFileSync(path.join(root, 'scripts', 'run-hosted-extraction.ps1'), 'utf8');
   const workflow = fs.readFileSync(path.join(root, '.github', 'workflows', 'extract.yml'), 'utf8');
