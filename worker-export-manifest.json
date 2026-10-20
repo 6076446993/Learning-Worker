@@ -7,16 +7,16 @@
   "ref": "refs/heads/main",
   "workerSha": "44933a5ced7225ad08aa2a140062ed7416c79c57",
   "vettedStateSha": "d0e9be11bf5c6fc77c84f0222923b1a599090ece",
-  "generatedAt": "2026-10-20T04:36:29.096Z",
-  "plaintextSha256": "b36f1f78317823ebb9558cd8327f57dedcf43ef8d99eba876f882d58d3dda58d",
+  "generatedAt": "2026-10-20T09:39:03.236Z",
+  "plaintextSha256": "6bbafa27228baa89bdda43a3a0bb13983e592d872640e473c03e0e94d8a3d760",
   "plaintextBytes": 3553388,
-  "encryptedSha256": "a18e69aa701b53d48b8aa109c4c91e63d93215855963963ca0be59742f39bc9a",
+  "encryptedSha256": "33b052858197495f085d7178684c7fd5332abfe63f2146bbeb679820a61ccd4a",
   "encryptedBytes": 3553945,
   "chunks": [
     {
       "name": "worker-state.part-0000.enc",
       "bytes": 3553945,
-      "sha256": "a18e69aa701b53d48b8aa109c4c91e63d93215855963963ca0be59742f39bc9a"
+      "sha256": "33b052858197495f085d7178684c7fd5332abfe63f2146bbeb679820a61ccd4a"
     }
   ]
 }
